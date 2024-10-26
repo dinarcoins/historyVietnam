@@ -663,6 +663,7 @@ progress[value].bra10:: -moz-progress-value { border-radius: 10px; }
 .pr50, .plr50, .pa50 { padding-right: 50px; }
 .pt50, .ptb50, .pa50 { padding-top: 50px; }
 .pt60, .ptb60, .pa60 { padding-top: 60px; }
+.pl100, .plr100, .pa100 { padding-left: 100px; }
 .pt180, .ptb180, .pa180 { padding-top: 180px; }
 .pb50, .ptb50, .pa50 { padding-bottom: 50px; }
 .pb60, .ptb60, .pa60 { padding-bottom: 60px; }
@@ -1156,6 +1157,7 @@ html:not(.diĐộng) .oyahi, html:not(.diĐộng) .oxahi { overflow: hidden; }
 .t0, .tl0, .tb0, .ol, .tr0, .t0c>*, .t0b:before { top: 0; }
 .t0i, .tl0i { top: 0!important; }
 .t50, .tl50, .tr50, .vami>* { top: 50%; }
+.t5 { top: 5%; }
 .t20 { top: 20%; }
 .t1 { top: 100%; }
 .l0, .tl0, .lr0, .ol, .tr0 { left: 0; }

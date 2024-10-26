@@ -1,24 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let currentSection = 0;
-  const sections = document.querySelectorAll(".section");
-  const navItems = document.querySelectorAll("aside li");
-  const totalSections = sections.length;
-  let isScrolling = false;
+  var currentSection = 0;
+  var sections = document.querySelectorAll(".section");
+  var navItems = document.querySelectorAll(".asideItem");
+  var totalSections = sections.length;
+  var isScrolling = false;
 
   function showSection(index) {
     sections.forEach((section, idx) => {
       if (idx === index) {
-        section.classList.add("active");
+        section.style.opacity = 1
+        section.style.zIndex = 1
       } else {
-        section.classList.remove("active");
+        section.style.opacity = 0
+        section.style.zIndex = 0
       }
     });
 
     navItems.forEach((item, idx) => {
       if (idx === index) {
-        item.classList.add("active");
+        item.style.backgroundColor = 'red'
       } else {
-        item.classList.remove("active");
+        item.style.backgroundColor = 'gray'
       }
     });
   }
@@ -41,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 600);
   }
 
-  function handleTouch() {
-    let startY = 0;
+  function handvarouch() {
+    var startY = 0;
 
     window.addEventListener("touchstart", function (e) {
       startY = e.touches[0].clientY;
@@ -76,7 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("wheel", handleScroll);
-  handleTouch();
+  handvarouch();
 
   showSection(currentSection);
+  return () => window.removeEventListener("wheel", handleScroll);
 });
