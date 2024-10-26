@@ -66,25 +66,6 @@ html {
   background-color: #555;
 }
 
-/* header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 90%;
-  height: 80px;
-  background-color: black;
-  z-index: 2;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 90%;
-  height: 80px;
-  background-color: red;
-  z-index: 2;
-} */
 .image-container {
   display: flex;
   width: 100%;
