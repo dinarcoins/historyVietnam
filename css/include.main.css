@@ -439,6 +439,7 @@ html:not(.diĐộng) .iMsg.koChe:not(.ngoài) { z-index: 301; -webkit-mask-image
 .fu { -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
 .fc { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -ms-transform: rotate(-90deg); -o-transform: rotate(-90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
 .fds0 { filter: drop-shadow(2px 2px 0 #111); }
+.fdsf { filter: drop-shadow(0 0 1em #fff); }
 .fnh:hover { filter: none; }
 .fni { filter: none!important; }
 // .lẻCao > .chứa { padding-top: 1px; }
@@ -984,7 +985,7 @@ html:not(.diĐộng) .oyahi, html:not(.diĐộng) .oxahi { overflow: hidden; }
 .w95 { width: 95%; }
 .wh1, .w1, .ol, .w1b:before, .w1c>* { width: 100%; }
 .w1-50 { width: calc(100% - 50px); }
-.w1-100 { width: calc(100% - 50px); }
+.w1-100 { width: calc(100% - 100px); }
 .w1-300 { width: calc(100% - 300px); }
 .wfc { width: fit-content; }
 .wmxc { width: max-content; }
