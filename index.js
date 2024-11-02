@@ -13,6 +13,16 @@ var chưaCóCache = true,
     ụHỏiĐáp: [], // MẢng chứa id sử dụng giao diện gửi câu hỏi
   };
 
+var footerText = [
+  { text: "V", color: "bgc0" },
+  { text: "i", color: "bgcr" },
+  { text: "e", color: "bgc0" },
+  { text: "t", color: "bgcr" },
+  { text: "n", color: "bgc0" },
+  { text: "a", color: "bgcr" },
+  { text: "m", color: "bgc0" },
+];
+
 $(function () {
   tảiTrước({
     dữLiệu: {
@@ -23,7 +33,7 @@ $(function () {
     biểuTượng: "imgs/bieuTuong.png",
     chờ: 2000, //tạo độ trễ khi vào xem nội dung (đảm bảo nội dung render đầy đủ)
     koChe: false, //không hiển thị
-    màuNền: "#FECB21", //Màu nền chờ
+    màuNền: "#C3423F", //Màu nền chờ
     riêng: true, //tải theo thư viện khác
     cache: true, //Tải cache các file package
     trước: function () {
@@ -97,40 +107,58 @@ $(function () {
                         })
                       )
                     ),
+                    // footer
+                    $("<footer>", {
+                      class:
+                        "w1-100 pf b0 r0 z5 df aic jcfe bgct h60 pr35 fs2 fs1-xs ttu fwb",
+                    }).append(
+                      $("<div>", {
+                        class: "wh8 bra50i mr25",
+                        style: "background: #C3423F",
+                      }),
+                      footerText.map(function (item, index) {
+                        return $("<div>", {
+                          text: item.text,
+                          class: `mr25`,
+                          style: `${index % 2 === 0 && "color: #C3423F"}`,
+                        });
+                      }),
+                      $("<div>", {
+                        class: "wh8 bra50i",
+                        style: "background: #C3423F",
+                      })
+                    ),
                     // body
                     $("<section>", {
                       class:
-                        "section wh1 t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe bgpc bgsc",
+                      style: "background-image: url(imgs/bg-paper.png)",
                     }).append(
-                      $("<div>", { class: "image-container" }).append(
-                        $("<img>", { src: "imgs/king.png", class: "" }),
-                        $("<img>", { src: "imgs/king.png", class: "" }),
-                        $("<img>", { src: "imgs/king.png", class: "" }),
-                        $("<img>", { src: "imgs/king.png", class: "" }),
-                        $("<img>", { src: "imgs/king.png", class: "" }),
-                        $("<img>", { src: "imgs/king.png", class: "" })
-                      )
+                      $("<div>", {
+                        class: "w50 h1v pa t0 l0 bgpc bgsc",
+                        style: "background: rgba(18, 18, 18, 0.92); background-image: url(imgs/trongDongBg.png);"
+                      })
                     ),
 
                     $("<section>", {
                       class:
-                        "section wh1 t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
                     }),
                     $("<section>", {
                       class:
-                        "section wh1 t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
                     }),
                     $("<section>", {
                       class:
-                        "section wh1 t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
                     }),
                     $("<section>", {
                       class:
-                        "section wh1 t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
                     }),
                     $("<section>", {
                       class:
-                        "section wh1 t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
                     })
                   )
                 );
@@ -175,7 +203,6 @@ $(function () {
               if (isScrolling) {
                 return;
               }
-
               if (
                 event.originalEvent.deltaY > 0 &&
                 currentSection < totalSections - 1
@@ -185,6 +212,11 @@ $(function () {
               } else if (event.originalEvent.deltaY < 0 && currentSection > 0) {
                 isScrolling = true;
                 currentSection--;
+              }
+
+              if (currentSection >= navItems.length) {
+                isScrolling = false;
+                return;
               }
 
               showSection(currentSection);
@@ -206,6 +238,8 @@ $(function () {
                 if (isScrolling) {
                   return;
                 }
+
+                cl("currentSection", currentSection);
 
                 if (startY > endY + 50 && currentSection < totalSections - 1) {
                   isScrolling = true;
