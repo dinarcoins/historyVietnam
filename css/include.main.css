@@ -665,6 +665,7 @@ progress[value].bra10:: -moz-progress-value { border-radius: 10px; }
 .pt50, .ptb50, .pa50 { padding-top: 50px; }
 .pt60, .ptb60, .pa60 { padding-top: 60px; }
 .pl100, .plr100, .pa100 { padding-left: 100px; }
+.pl150, .plr150, .pa150 { padding-left: 150px; }
 .pt180, .ptb180, .pa180 { padding-top: 180px; }
 .pb50, .ptb50, .pa50 { padding-bottom: 50px; }
 .pb60, .ptb60, .pa60 { padding-bottom: 60px; }

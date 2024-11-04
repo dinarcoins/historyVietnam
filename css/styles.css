@@ -1,13 +1,6 @@
 @font-face {
   font-family: mainFont;
-  src: url('../fonts/SVN-Gratelos\ Display.otf');
-}
-
-body,
-html {
-  overflow: hidden;
-  height: 100%;
-  font-family: mainFont;
+  src: url("../fonts/SVN-Gratelos\ Display.otf");
 }
 
 .image-container {
@@ -38,4 +31,8 @@ html {
 /* Các ảnh không được hover sẽ thu nhỏ lại */
 .image-container img:not(:hover) {
   width: 10%;
+}
+
+.menuItem:hover {
+  color: #c3423f;
 }

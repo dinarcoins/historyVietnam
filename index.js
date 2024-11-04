@@ -56,7 +56,7 @@ $(function () {
             var menuChính = config("chuyênLực." + ụTổng), // chuyên Lực sẽ chỉ lấy các chuyên mục cấp con ngay sau nó
               thân,
               banner;
-            cl("menuChính", menuChính);
+            // cl("menuChính", menuChính);
             var trangChủ = function () {
               $(".wrapper")
                 .empty()
@@ -71,7 +71,7 @@ $(function () {
                       !empty(menuChính) &&
                         menuChính.map(function (id) {
                           return $("<a>", {
-                            class: "menuItem cpi",
+                            class: "menuItem cpi fwb c0",
                             text: dữLiệu.tên(id, "ụ"),
                           });
                         })
@@ -89,21 +89,11 @@ $(function () {
                         class: "pr df fdc aic",
                         style: "gap: 20px",
                       }).append(
-                        $("<div>", {
-                          dataIndex: 0,
-                          class: "asideItem bsbb fdsf bra50i wh30 cpi",
-                        }),
-                        $("<div>", {
-                          dataIndex: 1,
-                          class: "asideItem bsbb fdsf bra50i wh30 cpi",
-                        }),
-                        $("<div>", {
-                          dataIndex: 2,
-                          class: "asideItem bsbb fdsf bra50i wh30 cpi",
-                        }),
-                        $("<div>", {
-                          dataIndex: 3,
-                          class: "asideItem bsbb fdsf bra50i wh30 cpi",
+                        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (item) {
+                          return $("<div>", {
+                            dataIndex: item,
+                            class: "asideItem bsbb fdsf bra50i wh30 cpi",
+                          });
                         })
                       )
                     ),
@@ -112,6 +102,17 @@ $(function () {
                       class:
                         "w1-100 pf b0 r0 z5 df aic jcfe bgct h60 pr35 fs2 fs1-xs ttu fwb",
                     }).append(
+                      $("<div>", {
+                        class: "pa fs09 b0 l0 tac w1 df aic jcc ttx wfc",
+                        text: "Lướt xuống...",
+                        style:
+                          "animation: float 2s ease-in-out infinite;color: #C3423F",
+                      }).append(
+                        $("<i>", {
+                          class: "fa-solid fa-arrow-turn-down",
+                          style: "color: #C3423F",
+                        })
+                      ),
                       $("<div>", {
                         class: "wh8 bra50i mr25",
                         style: "background: #C3423F",
@@ -129,17 +130,199 @@ $(function () {
                       })
                     ),
                     // body
+                    // home
                     $("<section>", {
                       class:
-                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe bgpc bgsc",
+                        "section wh1v t0 l0 r0 b0 pf df aic o0 tpo td5 ttfe bgpc bgsc",
                       style: "background-image: url(imgs/bg-paper.png)",
                     }).append(
                       $("<div>", {
-                        class: "w50 h1v pa t0 l0 bgpc bgsc",
-                        style: "background: rgba(18, 18, 18, 0.92); background-image: url(imgs/trongDongBg.png);"
-                      })
+                        class: "w50 h1v pa t0 bgpc bgsc",
+                        style:
+                          "background: rgba(18, 18, 18, 0.92); background-image: url(imgs/trongDongBg.png);",
+                      }),
+                      $("<div>", {
+                        class: "pb31 bgso bgpc bgrn pa t0 l0 z0 w25 tt-50",
+                        style:
+                          "background-image:url(imgs/trongDongGold.png);  left: 20%",
+                      }),
+                      $("<div>", {
+                        class: "pb31 bgso bgpc bgrn pa b0 r0 z0 w25 ttx05",
+                        style: "background-image:url(imgs/trongDongBlack.png)",
+                      }),
+                      $("<div>", { class: "container" }).append(
+                        $("<div>", {
+                          class: "w1 df jcsb",
+                        }).xửLý(
+                          "đốiTượng.tải.bàiViết",
+                          {
+                            d: {
+                              thuộcTính: {
+                                ụ: ["16900", "~|"],
+                              },
+                              giớiHạn: 6,
+                              sắpXếp: "ấ-",
+                            },
+                          },
+                          function (a) {
+                            var t = $(this);
+                            //   a: Danh sách id bài viết
+                            CẦN.db("bàiViết." + a, function () {
+                              t.empty().append(
+                                $("<div>", { class: "w40" }).append(
+                                  $("<div>", {
+                                    text: dữLiệu.tên(161038, "ế"),
+                                    class: "pr z1 lh1 z3 fwb",
+                                    style: "color: #C3423F; font-size: 94px",
+                                  }),
+                                  $("<div>", {
+                                    text: dữLiệu.môTả(161038, "ế"),
+                                    class: "fs15 pr w50 z1 lh12 mt25",
+                                    style: "color: #EEE4DA",
+                                  })
+                                ),
+                                $("<div>", {
+                                  class: "w10 lh12 fsi fwb",
+                                  text: "Cần Kiệm Liêm Chính Chí Công Vô Tư",
+                                  style: "color: #C3423F; font-size: 55px",
+                                }),
+                                $("<div>", {
+                                  class:
+                                    "pb31 bgsc bgpc bgrn bóng pa tt t50 l50 w25 z1",
+                                }).ảnh(a[0] || 161038, "ế", true)
+                              );
+                            });
+                          }
+                        )
+                      )
                     ),
 
+                    // introduce
+
+                    $("<section>", {
+                      class:
+                        "section wh1v t0 l0 r0 b0 pf df aic o0 tpo td5 ttfe bgpc bgsc",
+                      style: "background-image: url(imgs/bg-paper.png)",
+                    }).append(
+                      $("<div>", {
+                        class: "pb31 bgso bgpc bgrn pa t0 l0 z0 w25 tt-50",
+                        style:
+                          "background-image:url(imgs/trongDongGold.png);  left: 20%",
+                      }),
+                      $("<div>", {
+                        class: "pb31 bgso bgpc bgrn pa b0 r0 z0 w25 ttx05",
+                        style: "background-image:url(imgs/trongDongBlack.png)",
+                      }),
+                      $("<div>", { class: "container pr z1" }).xửLý(
+                        "đốiTượng.tải.bàiViết",
+                        {
+                          d: {
+                            thuộcTính: {
+                              ụ: ["16901", "~|"],
+                            },
+                            giớiHạn: 20,
+                            sắpXếp: "ấ-",
+                          },
+                        },
+                        function (a) {
+                          var t = $(this);
+                          CẦN.db("bàiViết." + a, function () {
+                            t.empty().append(
+                              $("<div>", {
+                                text: dữLiệu.tên(161040, "ế"),
+                                class: "lh1 fwb",
+                                style: "color: #C3423F; font-size: 85px",
+                              }),
+                              $("<div>", {
+                                html: config("bàiViết.161040.ộ"),
+                                class: "fs2 lh16 mt25 c0",
+                              })
+                            );
+                          });
+                        }
+                      )
+                    ),
+
+                    // time line
+                    $("<section>", {
+                      class:
+                        "section wh1v t0 l0 r0 b0 pf df aic o0 tpo td5 ttfe bgpc bgsc",
+                      style: "background-image: url(imgs/trongDongBg.png)",
+                    }).append(
+                      $("<div>", {
+                        class: "pb31 bgso bgpc bgrn pa t0 l0 z0 w25 tt-50",
+                        style:
+                          "background-image:url(imgs/trongDongBlack.png);  left: 20%",
+                      }),
+                      $("<div>", {
+                        class: "pb31 bgso bgpc bgrn pa b0 r0 z0 w25 ttx05",
+                        style: "background-image:url(imgs/trongDongGold.png)",
+                      }),
+                      $("<div>", { class: "container pr z1" }).xửLý(
+                        "đốiTượng.tải.bàiViết",
+                        {
+                          d: {
+                            thuộcTính: {
+                              ụ: ["16903", "~|"],
+                            },
+                            giớiHạn: 20,
+                            sắpXếp: "ấ-",
+                          },
+                        },
+                        function (a) {
+                          var t = $(this);
+                          CẦN.db("bàiViết." + a, function () {
+                            t.empty().append(
+                              $("<div>", {
+                                text: "Dòng thời gian lịch sử Việt Nam",
+                                class: "lh1 fwb",
+                                style: "color: #C3423F; font-size: 85px",
+                              }),
+
+                              $("<div>", { class: "xinChao" }).sờLais(
+                                a.map(function (á) {
+                                  var ê = dữLiệu.tên(á, "ế");
+                                  return bốCục.thẻ(á, {
+                                    // bookmark:true,
+                                    // dọc:false,
+                                    ê: ê,
+                                    môTả: dữLiệu.môTả(á, "ế"),
+                                    bo: "col-sm-4,col-md-3",
+                                    bọc: "bs20d",
+                                    lớp: "-pa15,plr15",
+                                    xong: function () {
+                                      $(this)
+                                        .find(".gốc")
+                                        .sửaLớp("tac,ttu,mb10");
+                                    },
+                                  });
+                                }),
+                                {
+                                  // ê:'',
+                                  sửaLớp: {
+                                    tên: "ml15,pl15,pr,vt,",
+                                    chứaSờLai: "plr0",
+                                    sờLai: "pt15",
+                                    khốiSờLai: "-pt15,pb10",
+                                  },
+                                  tựChạy: 12000,
+                                  xong: function () {},
+                                }
+                              )
+                            );
+                          });
+                        }
+                      )
+                    ),
+
+                    $("<section>", {
+                      class:
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                    }),
+                    $("<section>", {
+                      class:
+                        "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
+                    }),
                     $("<section>", {
                       class:
                         "section wh1v t0 l0 r0 b0 pf df aic jcc o0 tpo td5 ttfe",
@@ -170,6 +353,7 @@ $(function () {
             var currentSection = 0;
             var sections = $(".section");
             var navItems = $(".asideItem");
+            var menuItems = $(".menuItem");
             var totalSections = sections.length;
             var isScrolling = false;
 
@@ -197,6 +381,11 @@ $(function () {
                     .removeClass("wh30");
                 }
               });
+              if (index === 2) {
+                menuItems.css({ color: "#EEE4DA" });
+              } else {
+                menuItems.css("color", "");
+              }
             }
 
             function handleScroll(event) {
@@ -266,7 +455,19 @@ $(function () {
 
             $(".menuItem").each((index, item) => {
               $(item).on("click", function () {
-                currentSection = index;
+                switch (item.text) {
+                  case "Home":
+                    currentSection = 0;
+                    break;
+                  case "PRECIS":
+                    currentSection = 1;
+                    break;
+                  case "HISTORY":
+                    currentSection = 3;
+                    break;
+                  default:
+                }
+
                 showSection(currentSection);
               });
             });
