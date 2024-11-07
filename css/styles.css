@@ -1,38 +1,11 @@
-@font-face {
-  font-family: mainFont;
-  src: url("../fonts/SVN-Gratelos\ Display.otf");
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
 }
 
-.image-container {
-  display: flex;
-  width: 100%;
-  overflow: hidden;
+.hoverImage:hover {
+  scale: 1.1;
 }
 
-.image-container img {
-  width: 20%;
-  height: 400px;
-  transition: width 0.3s ease;
-  filter: grayscale(100%); /* Ảnh đen trắng */
-  object-fit: cover;
-}
-
-/* Ảnh đầu tiên có width 50% mặc định */
-.image-container img:first-child {
-  width: 50%;
-}
-
-/* Khi hover vào bất kỳ ảnh nào */
-.image-container img:hover {
-  width: 50%;
-  filter: grayscale(0); /* Bỏ đen trắng khi hover */
-}
-
-/* Các ảnh không được hover sẽ thu nhỏ lại */
-.image-container img:not(:hover) {
-  width: 10%;
-}
-
-.menuItem:hover {
-  color: #c3423f;
+.hoverTicket:hover {
+  margin-left: 20px;
 }

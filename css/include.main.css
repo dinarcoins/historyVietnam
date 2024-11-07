@@ -744,6 +744,7 @@ progress[value].bra10:: -moz-progress-value { border-radius: 10px; }
 .dif { display: inline-flex; }
 .dc { display: compact; }
 .dt { display: table; }
+.dg { display: grid; }
 .dit { display: inline-table; }
 .dtr { display: table-row; }
 .dtc, .dtr>*, .dtcc>* { display: table-cell; }
@@ -986,6 +987,7 @@ html:not(.diĐộng) .oyahi, html:not(.diĐộng) .oxahi { overflow: hidden; }
 .w95 { width: 95%; }
 .wh1, .w1, .ol, .w1b:before, .w1c>* { width: 100%; }
 .w1-50 { width: calc(100% - 50px); }
+.w1-80 { width: calc(100% - 80px); }
 .w1-100 { width: calc(100% - 100px); }
 .w1-300 { width: calc(100% - 300px); }
 .wfc { width: fit-content; }
@@ -1059,6 +1061,7 @@ html:not(.diĐộng) .oyahi, html:not(.diĐộng) .oxahi { overflow: hidden; }
 .w10p { width: 10px; }
 .w15p { width: 15px; }
 .w20p { width: 20px; }
+.w80p, .wh80p { width: 80px; }
 .w100, .wh100 { width: 100px; }
 .w130, .wh130 { width: 130px; }
 .w150, .wh150 { width: 150px; }
@@ -1175,6 +1178,7 @@ html:not(.diĐộng) .oyahi, html:not(.diĐộng) .oxahi { overflow: hidden; }
 .b1 { bottom: 100%; }
 .r0, .lr0, .tr0 { right: 0; }
 .r1, .r1b:before { right: 100%; }
+.r-1 { right: -100%; }
 .tlf { table-layout: fixed; }
 .wwi, .ffi { word-wrap: initial; }
 .ws { white-space: normal; }
@@ -2119,6 +2123,9 @@ input.c3p:-moz-placeholder {
 	.col-md-a, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
 		float: left;
 	}
+	.w1-md-80 { 
+		width: calc(100% - 80px); 
+	}
 	.col-md-12 {
 		width: 100%;
 	}
@@ -2774,6 +2781,7 @@ input.c3p:-moz-placeholder {
 	.w500-lg { width: 500px; }
 	.w800-lg { width: 800px; }
 	.w1k-lg { width: 1000px; }
+	.dn-lg { display: none; }
 }
 
 /*Hiệu ứng động*/
