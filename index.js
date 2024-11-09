@@ -208,8 +208,6 @@ $(function () {
                         class: `mr25 fs1 ls03`,
                         style: `color: #C3423F`,
                       }).tip("Thuộc quyền của I&E"),
-
-                      $('<img>', {class: 'w200 h80 dragon pa t0 tty z-1', src: '/imgs/dragon2.gif'})
                     ),
                     // Trang chủ
                     (thân = $("<div>", {
@@ -336,7 +334,7 @@ $(function () {
                                   }),
                                   $("<div>", {
                                     text: dữLiệu.môTả(16901, "ụ"),
-                                    class: "lh1 fwb fs16",
+                                    class: "lh1 fs16",
                                     style: "color: #EEE4DA;",
                                   }),
 
@@ -442,7 +440,7 @@ $(function () {
                                   }),
                                   $("<div>", {
                                     text: dữLiệu.môTả(16909, "ụ"),
-                                    class: "lh1 fwb fs16",
+                                    class: "lh1 fs16",
                                     style: "color: #C3423F",
                                   }),
                                   $("<div>", { class: "df mt25 h400" }).append(
@@ -517,12 +515,12 @@ $(function () {
                                   $("<a>", {
                                     text: dữLiệu.tên(16908, "ụ"),
                                     class:
-                                      "lh12 fwb fs4 fs1-xs fs2-md mb25 c0 crdh bấmĐc",
+                                      "lh12 fwb fs4 fs1-xs fs2-md mb25 crdh bấmĐc",
                                     href: dữLiệu.url(16908, "ụ"),
                                   }),
                                   $("<div>", {
                                     text: dữLiệu.môTả(16908, "ụ"),
-                                    class: "lh1 fwb fs1 c0",
+                                    class: "lh1 fs16 c0",
                                   }),
 
                                   $("<div>", { class: "xinChao" }).sờLais(
@@ -584,34 +582,6 @@ $(function () {
                       ))
                   )
                 );
-
-                $(document).ready(function () {
-                  const $box = $(".dragon");
-                  const screenWidth = $(window).width();
-                  let startTime = null;
-                
-                  function animateBox(timestamp) {
-                    // Khởi tạo thời gian bắt đầu
-                    if (!startTime) startTime = timestamp;
-                
-                    // Tính thời gian đã trôi qua
-                    const elapsed = timestamp - startTime;
-                
-                    // Tính vị trí hiện tại (3000ms để hoàn thành 1 vòng)
-                    const progress = (elapsed / 30000) % 1; // 3 giây cho 1 chu kỳ
-                    const x = screenWidth - progress * screenWidth; // Di chuyển từ phải sang trái
-                
-                    // Cập nhật vị trí của phần tử
-                    $box.css("left", `${x}px`);
-                
-                    // Tiếp tục lặp
-                    requestAnimationFrame(animateBox);
-                  }
-                
-                  // Khởi động animation
-                  requestAnimationFrame(animateBox);
-                });
-                
 
               var currentSection = 0;
               var sections = $(".section");
@@ -746,7 +716,7 @@ $(function () {
                   // Code giao diện chuyên mục tại
                   thân.empty().append(
                     $("<div>", {
-                      class: "container pr pt60",
+                      class: "container pr pt60 plr25",
                     }).append(
                       $("<div>", {
                         class: "pb31 bgso bgpc bgrn pa b0 r0 z1 w25 ttx05",
@@ -763,8 +733,6 @@ $(function () {
                           tải: true,
                           ụ: ụTổng, // ID chuyên mục tổng (Chuyên mục chứa tất cả chuyên mục website)
                         }),
-
-                        $("<div>", { class: "" }),
 
                         $("<div>", { class: "df fww jcsb" }).xửLý(
                           "đốiTượng.tải.bàiViết",
@@ -876,7 +844,7 @@ $(function () {
                 a: function (i) {
                   // Code giao diện xem bài viết tại
                   thân.empty().append(
-                    $("<div>", { class: "container pt60" }).append(
+                    $("<div>", { class: "container pt60 plr25" }).append(
                       $("<div>", { class: "mt25 mb40 plr15-xs" }).append(
                         $("<div>", { class: "mtb25" }).append(
                           bốCục.vụnBánh(i, {
