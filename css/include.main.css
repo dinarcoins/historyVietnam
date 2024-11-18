@@ -2629,7 +2629,6 @@ input.c3p:-moz-placeholder {
 	.fs1-md { font-size: 1em; }
 	.fs09-md { font-size: .9em; }
 	.w1-md { width: 100%; }
-	
 }
 @media (max-width: 767px) {
 	.col-sm-0, .dn-sm- { display: none; }

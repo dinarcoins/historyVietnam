@@ -1,11 +1,25 @@
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 .timeline-item:nth-child(odd) {
   flex-direction: row;
 }
 
-.hoverImage:hover {
-  scale: 1.1;
+.anhTimeLine {
+  padding-bottom: 20%
 }
 
-.hoverTicket:hover {
-  margin-left: 20px;
+.anhBacHo {
+  padding-bottom: 50%
+}
+
+@media screen and (max-width: 991px){
+  .anhBacHo {
+    padding-bottom: 60%
+  }
+  .anhTimeLine {
+    padding-bottom: 50%
+  }
 }
