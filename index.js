@@ -65,7 +65,7 @@ $(function () {
                 .append(
                   (header = $("<div>", { class: "", id: "#header" })),
                   (thân = $("<div>", {
-                    class: "",
+                    class: "hmnv h1",
                     id: "#body",
                     style: "background-image: url(/imgs/trongDongBg.png)",
                   })),
@@ -784,7 +784,6 @@ $(function () {
                               }
                               else {
                                 // dạng không có chuyên mục con và có bài viết
-
                                 CẦN.db("chuyênMục." + ả, function () {
                                   x.empty().append(
                                     $("<div>", {
