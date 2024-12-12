@@ -165,19 +165,6 @@ $(function () {
                     "w1-md-80 dn-lg- pf b0 r0 z5 df aic jcfe bgct h40 pr35 fs1 ttu fwb",
                 }).append(
                   $("<div>", {
-                    class:
-                      "scrollDownBtn pa fs1 b0 l0 tac w1 df aic jcc ttx wfc cpi",
-                    text: "Cuộn xuống...",
-                    style:
-                      "animation: float 2s ease-in-out infinite;color: #C3423F",
-                  }).append(
-                    $("<i>", {
-                      class: "fa-solid fa-arrow-turn-down",
-                      style: "color: #C3423F",
-                    })
-                  ),
-
-                  $("<div>", {
                     text: "i&e - Vietnam",
                     class: `mr25 fs1 ls03`,
                     style: `color: #C3423F`,
