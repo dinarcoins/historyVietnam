@@ -139,12 +139,13 @@ $(function () {
                         // i: 1 hoặc 1 mảng ID chuyên mục cần tìm kiếm. Hệ thống sẽ tìm kiếm bài viết trong chuyên mục i và các chuyên mục con của i
                         giớiHạn: 20, // Số lượng bài viết
                         p: 1, // Chỉ tìm kiếm các bài viết công khai
-                        e: dịch("Tìm thời kỳ"), // Placeholder ô nhập từ khóa
+                        e: "Tìm thời kỳ", // Placeholder ô nhập từ khóa
                         bo: "-bar,-bg1,-z11,-col-xs-22,-col-sm-6,-col-lg-5", // Sửa lớp thẻ bo ngoài
                         ẩn: false, // TRUE: Ẩn sẵn ô tìm kiếm. Mặc định: TRUE
+                        // tạo option bấm close khi cần đóng ô tìm kiếm
                         treo: false, // TRUE: Thêm thuộc tính position:absolute. Mặc định: TRUE
                         đóng: false, // TRUE: Cho phép click bên ngoài để tắt. Mặc định: TRUE
-                        // bỏQua: "", // Nếu cho phép click bên ngoài để đóng danh sách sau tìm kiếm → Bỏ qua sự kiện click vào các bộ chọn được thiết lập (Class, ID, Attr, v.v..)
+                        bỏQua: "", // Nếu cho phép click bên ngoài để đóng danh sách sau tìm kiếm → Bỏ qua sự kiện click vào các bộ chọn được thiết lập (Class, ID, Attr, v.v..)
                         // sửaLớp: {
                         //   cụcSearch: "-plr10",
                         //   sDiĐộng: "ml5,pa5,cf,bg1,-cl1",
@@ -201,11 +202,6 @@ $(function () {
                           class: "pb31 bgso bgpc bgrn pa t0 l0 z0 w25 tt-50",
                           style:
                             "background-image:url(/imgs/trongDongBlack.png); left: 20%",
-                        }),
-                        $("<div>", {
-                          class: "pb21 bgso bgpc bgrn pa t50 l50 z0 w50 dn-sm",
-                          style:
-                            "background-image:url(/imgs/banDo.png);transform: translate(-50%, -50%);",
                         }),
 
                         $("<div>", { class: "container plr25" }).append(
@@ -781,8 +777,7 @@ $(function () {
                                     });
                                   }
                                 );
-                              }
-                              else {
+                              } else {
                                 // dạng không có chuyên mục con và có bài viết
                                 CẦN.db("chuyênMục." + ả, function () {
                                   x.empty().append(
@@ -875,76 +870,80 @@ $(function () {
                   a: function (i) {
                     // Code giao diện xem bài viết tại
                     // aside.empty();
-                    thân.empty().append(
-                      $("<div>", { class: "container pt60 plr25" }).append(
-                        $("<div>", { class: "mt25 mb40 plr15-xs" }).append(
-                          $("<div>", { class: "mtb25 cf" }).append(
-                            bốCục.vụnBánh(i, {
-                              // i là ID đối tượng xem
-                              ọ: "ế", // Loại đối tượng xem (Chuyên mục → "ụ", Bài viết → "ế")
-                              menuPhụ: "", // Bộ chọn menu phụ (Nếu có)
-                              làmMới: false,
-                              bo: "gạchChânDòng",
-                              idCache: "cache",
-                              tải: true,
-                              menuPhụ: ".menuConChuyênMục",
-                              ụ: ụTổng, // ID chuyên mục tổng (Chuyên mục chứa tất cả chuyên mục website)
-                            })
-                          ),
-                          $("<div>", { class: "mtb25" }).append(
-                            $("<div>", {
-                              class: "w1 pb21 bgsc bgrn bra10 bóng bấmĐc",
-                            })
-                              .ảnh(i, "ế", true)
-                              .click(function () {
-                                var id = getImgIds(
-                                  $("<div>").html(config("bàiViết." + i + ".ộ"))
-                                );
-                                quảnTrị.xemẢnh(id);
+                    CẦN.db("bàiViết." + i, function () {
+                      thân.empty().append(
+                        $("<div>", { class: "container pt60 plr25" }).append(
+                          $("<div>", { class: "mt25 mb40 plr15-xs" }).append(
+                            $("<div>", { class: "mtb25 cf" }).append(
+                              bốCục.vụnBánh(i, {
+                                // i là ID đối tượng xem
+                                ọ: "ế", // Loại đối tượng xem (Chuyên mục → "ụ", Bài viết → "ế")
+                                menuPhụ: "", // Bộ chọn menu phụ (Nếu có)
+                                làmMới: false,
+                                bo: "gạchChânDòng",
+                                idCache: "cache",
+                                tải: true,
+                                menuPhụ: ".menuConChuyênMục",
+                                ụ: ụTổng, // ID chuyên mục tổng (Chuyên mục chứa tất cả chuyên mục website)
+                              })
+                            ),
+                            $("<div>", { class: "mtb25" }).append(
+                              $("<div>", {
+                                class: "w1 pb21 bgsc bgrn bra10 bóng bấmĐc",
+                              })
+                                .ảnh(i, "ế", true)
+                                .click(function () {
+                                  var id = getImgIds(
+                                    $("<div>").html(
+                                      config("bàiViết." + i + ".ộ")
+                                    )
+                                  );
+                                  quảnTrị.xemẢnh(id);
+                                }),
+                              $("<div>", {
+                                class: "mtb25 cf fwb fs2",
+                                text: dữLiệu.tên(i, "ế"),
                               }),
-                            $("<div>", {
-                              class: "mtb25 cf fwb fs2",
-                              text: dữLiệu.tên(i, "ế"),
-                            }),
-                            $("<div>", { class: "df jcsb" }).append(
-                              $("<div>", { class: "df cf" }).append(
-                                $.icon("print:: fs16 mr5"),
-                                $("<div>", {
-                                  class: "",
-                                  text: "In bài viết",
-                                })
-                              ),
+                              $("<div>", { class: "df jcsb" }).append(
+                                $("<div>", { class: "df cf" }).append(
+                                  $.icon("print:: fs16 mr5"),
+                                  $("<div>", {
+                                    class: "",
+                                    text: "In bài viết",
+                                  })
+                                ),
 
-                              $("<div>", { class: "df cf" }).append(
-                                $.icon("schedule:: fs16 mr5"),
-                                $("<div>", {
-                                  class: "",
-                                  text: iDate(
-                                    config("bàiViết." + i + ".ấ"),
-                                    "DD/MM/YYYY"
-                                  ),
-                                })
+                                $("<div>", { class: "df cf" }).append(
+                                  $.icon("schedule:: fs16 mr5"),
+                                  $("<div>", {
+                                    class: "",
+                                    text: iDate(
+                                      config("bàiViết." + i + ".ấ"),
+                                      "DD/MM/YYYY"
+                                    ),
+                                  })
+                                )
                               )
-                            )
-                          ),
-                          $("<div>", {
-                            class: "w1 mlra bgcf pa15 lh12 fs12 fs1-xs",
-                            html: config("bàiViết." + i + ".ộ"),
-                          })
-                        )
-                      ),
-                      $("<button>", {
-                        class:
-                          "pf wh50 bra50 bss bcrd bw3 o05 o1h cpi bgcf df aic jcsc crdh btn_toTop",
-                        style: "bottom:80px;right:30px",
-                      })
-                        .click(function () {
-                          $(window).scrollTop(0);
+                            ),
+                            $("<div>", {
+                              class: "w1 mlra bgcf pa15 lh12 fs12 fs1-xs",
+                              html: config("bàiViết." + i + ".ộ"),
+                            })
+                          )
+                        ),
+                        $("<button>", {
+                          class:
+                            "pf wh50 bra50 bss bcrd bw3 o05 o1h cpi bgcf df aic jcsc crdh btn_toTop",
+                          style: "bottom:80px;right:30px",
                         })
-                        .append(
-                          $("<i>", { class: "fa-solid fa-arrow-up fs16" })
-                        )
-                    );
+                          .click(function () {
+                            $(window).scrollTop(0);
+                          })
+                          .append(
+                            $("<i>", { class: "fa-solid fa-arrow-up fs16" })
+                          )
+                      );
+                    });
                   },
                   404: function () {
                     vàoURL("/");
