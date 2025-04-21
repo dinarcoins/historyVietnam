@@ -1,26 +1,100 @@
-body,
-html {
-  scroll-behavior: smooth;
+.correct {
+  background-color: lightgreen !important;
 }
 
-.timeline-item:nth-child(odd) {
-  flex-direction: row;
+.duplicate {
+  background-color: lightcoral !important;
 }
 
-.anhTimeLine {
-  padding-bottom: 20%
+.selected {
+  background-color: lightgreen !important;
 }
 
-.anhBacHo {
-  padding-bottom: 50%
+.square {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-@media screen and (max-width: 991px){
-  .anhBacHo {
-    padding-bottom: 110%
+#chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(8, 80px);
+  gap: 2px;
+}
+
+.possibleMove {
+  background-color: lightgreen !important;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pieceImage {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.light {
+  background: #f0d9b5;
+}
+
+.dark {
+  background: #b58863;
+}
+
+.nút {
+  box-shadow: 0.1em 0.1em;
+}
+
+.nút:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.nút:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+.thongBao {
+  transform: translateX(300px);
+}
+
+.thongBao.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.thongBao.error {
+  background-color: #f44336;
+}
+
+.thongBao.warning {
+  background-color: #ff9800;
+}
+
+.thongBao.success {
+  background-color: #4caf50;
+}
+
+@media screen and (max-width: 768px) {
+  .square {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
   }
 
-  .anhTimeLine {
-    padding-bottom: 50%
+  #chessboard {
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 1px;
   }
 }

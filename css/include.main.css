@@ -1141,7 +1141,7 @@ html:not(.diĐộng) .oyahi, html:not(.diĐộng) .oxahi { overflow: hidden; }
 .wmn { min-width: 100%; }
 .wmnv { min-width: 100vw; }
 .wmxv { max-width: 100vw; }
-// .hmx-40 { max-height: calc(100% - 40px); }
+.hmx-40 { max-height: calc(100% - 40px); }
 .wmx0, td.els { max-width: 0; }
 .ls-1 { letter-spacing: -1px; }
 .ls-2 { letter-spacing: -2px; }
@@ -4524,7 +4524,7 @@ mp4 iframe:nth-child(n+2) { display: none; }
 .nổi:before { position: fixed; background-color: rgba(0,0,0,.5); }
 .nổi:after { position: absolute; }
 #khungBảng.nổi { position: fixed; width: 90%; top: 0; left: 5%; z-index: 99; }
-#khungThôngBáo.gọn { position: fixed; bottom: 0; z-index: 99; }
+#khungthongBao.gọn { position: fixed; bottom: 0; z-index: 99; }
 	.ngoài.gọn { width: 100vh; height: 100vh; position: relative; z-index: 99; overflow: hidden; zoom: .14; line-height: 1; display: inline-block; margin: 10px!important; cursor: pointer; padding: 10px; }
 		.Safari .ngoài.gọn { width: 14vh; height: 14vh; }
 		@media (orientation: portrait) {
